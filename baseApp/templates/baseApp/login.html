@@ -1,0 +1,22 @@
+{% extends 'baseApp/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+	<h2>Login</h2>
+</div>
+
+<div class="card-body">
+	<form method="POST" >
+		{% csrf_token %}
+		<p>Username</p>
+		<input name="username" type="text">
+		<p>Password</p>
+		<input name="password" type="password">
+
+		<input style="margin-top: 10px ;" class="button" type='submit' value='Login'>
+		<p>Don't have an account?  <a href="{% url 'register' %}">Sign up</a></p>
+		
+
+	</form>
+</div>
+{% endblock content %}

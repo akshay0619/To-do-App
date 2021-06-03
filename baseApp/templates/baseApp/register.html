@@ -1,0 +1,22 @@
+
+{% extends 'baseApp/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+	<h2>Registration</h2>
+</div>
+
+<div class="card-body">
+	<form method="POST">
+		{% csrf_token %}
+		{% for field in form %}
+			<p>{{field.label}}</p>
+			{{field}}
+		{% endfor %}
+		
+		<input style="margin-top: 10px;" class="button" type="submit" value="Register">
+		
+	</form>
+	<p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endblock content %}

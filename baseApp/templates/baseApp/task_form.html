@@ -1,0 +1,17 @@
+{% extends 'baseApp/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+	<a href="{% url 'home' %}">&#8592; Back</a>
+</div>
+<h3>Task form</h3>
+<div class="card-body">
+
+	<form method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+
+		<input class="button" type="submit" name="submit" value="Submit">
+	</form>
+</div>
+{% endblock content %}
